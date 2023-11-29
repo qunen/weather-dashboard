@@ -1,0 +1,8 @@
+<div class="dashboard">
+    <app-date-filter (pickedDateRange)="filterCharts($event)"></app-date-filter>
+    <div class="charts">
+        <app-line-chart [props]="directRadiationProps"></app-line-chart>
+        <app-bar-chart [props]="relativeHumidityProps"></app-bar-chart>
+        <app-line-chart [props]="temperatureProps"></app-line-chart>
+    </div>
+</div>

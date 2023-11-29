@@ -1,0 +1,7 @@
+./.vscode
+./logs
+./node_modules
+.dockerignore
+# .env
+.env.example
+Dockerfile

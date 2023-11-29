@@ -1,0 +1,8 @@
+.charts {
+    display: block;
+    border: 3px solid rgba(0,122,204,1);
+    border-radius: 5px;
+    padding: 20px;
+    max-width: 800px;
+    margin: auto;
+}

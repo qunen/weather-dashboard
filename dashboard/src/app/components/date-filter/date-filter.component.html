@@ -1,0 +1,13 @@
+<div class="date-range-filter">
+    <mat-form-field>
+        <mat-label>Enter a date range</mat-label>
+        <mat-date-range-input [rangePicker]="picker">
+            <input matStartDate placeholder="Start Date" #startDate>
+            <input matEndDate placeholder="End Date" #endDate (dateChange)="onDateChange(startDate, endDate)">
+        </mat-date-range-input>
+        <mat-hint>YYYY-MM-DD - YYYY-MM-DD</mat-hint>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-date-range-picker #picker></mat-date-range-picker>
+    </mat-form-field>
+    <app-button text="{{buttonText}}" (btnClick)="onClick()"></app-button>
+</div>

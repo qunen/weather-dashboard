@@ -1,0 +1,17 @@
+<div 
+    class="bar-chart"
+>
+    <h2>{{props.chartTitle}}</h2>
+    @if (props.barChartData.labels && props.barChartData.labels.length) {
+    <canvas baseChart
+        [type]="'bar'"
+        [data]="props.barChartData"
+        [options]="props.barChartOptions"
+        [legend]="true"
+    ></canvas>
+    } @else {
+    <div class="no-data">
+        <h3>No data available</h3>
+    </div>
+    }
+</div>

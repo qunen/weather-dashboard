@@ -1,0 +1,17 @@
+<div 
+    class="line-chart"
+>
+    <h2>{{props.chartTitle}}</h2>
+    @if (props.lineChartData.labels && props.lineChartData.labels.length) {
+    <canvas baseChart
+        [type]="'line'"
+        [data]="props.lineChartData"
+        [options]="props.lineChartOptions"
+        [legend]="true"
+    ></canvas>
+    } @else {
+    <div class="no-data">
+        <h3>No data available</h3>
+    </div>
+    }
+</div>
