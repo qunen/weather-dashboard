@@ -18,9 +18,10 @@ Angular.js      v17
 MariaDB or Docker
 ```
 ### Setup Database
-First navigate to `./backend` directory.
+First navigate to `./backend` directory and install packages.
 ```
 cd ./backend
+npm ci
 ```
 Then, create a `.env` file using `.env.example` and change the MariaDB config to the one you will be using. Leave the variable `MARIADB_DATABASE` unchange. 
 
@@ -45,9 +46,10 @@ When the database is populated, the dashboard is ready to be launch. First, star
 ```
 npm start
 ```
-Next, navigate to the `./dashboard` directory to start the dashboard.
+Next, navigate to the `./dashboard` directory and install packages and start the dashboard.
 ```
 cd ../dashboard
+npm ci
 ng serve
 ```
 You should now be able to access the dashboard at `http://localhost:4200/`
