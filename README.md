@@ -11,6 +11,16 @@ The API retrieves the following weather data from 01-Oct-2023 to 10-Oct-2023:
 These data will be visualized into charts that can be filtered using the date range picker.
 
 ## Running the Dashboard 
+### Running with `docker compose`
+You can run this with `docker compose`.
+```
+docker compose build
+docker compose up
+```
+Once the dashboard container is done building, the dashboard can be accessed on `http://localhost:4200/`.
+
+### Running locally
+Alternatively, this dashboard app can also be run locally by following the steps below.
 ### Prequisite
 ```
 Node.js         v18
@@ -53,10 +63,3 @@ npm ci
 ng serve
 ```
 You should now be able to access the dashboard at `http://localhost:4200/`.
-
-Alternatively, you can run this with `docker compose`.
-```
-docker compose build
-docker compose up
-```
-Once the dashboard container is done building, the dashboard can be accessed on `http://localhost:4200/`.
