@@ -1,0 +1,39 @@
+version: '3.9'
+
+services:
+  mariadb:
+    image: mariadb:11.1
+    restart: always
+    ports:
+      - 3306:3306
+    environment:
+      MARIADB_DATABASE: weatherData
+      MARIADB_ROOT_PASSWORD: root_password
+      MARIADB_USER: user
+      MARIADB_PASSWORD: password
+    volumes:
+      - ./backend/docker/db:/docker-entrypoint-initdb.d
+
+  backend:
+    build: ./backend
+    ports:
+      - 8080:8080
+    restart: always
+    environment:
+      MARIADB_HOST: "mariabd"
+      MARIADB_PORT: 3306
+      MARIADB_USER: "user"
+      MARIADB_PASSWORD: "password"
+      MARIADB_DATABASE: "weatherData"
+    depends_on:
+      - mariadb
+
+  dashboard:
+    build: ./dashboard
+    ports:
+      - 4200:4200
+    restart: always
+    depends_on:
+      - backend
+    volumes:
+      - dashboard:/data/dashboard
