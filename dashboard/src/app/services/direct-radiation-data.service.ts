@@ -7,7 +7,7 @@ import { DirectRadiationResponse } from '../interfaces/direct-radiation';
   providedIn: 'root'
 })
 export class DirectRadiationDataService {
-  private apiUrl: string = `http://localhost:3000/api/v1/directRadiation`;
+  private apiUrl: string = `http://localhost:8080/api/v1/directRadiation`;
 
   constructor(private http: HttpClient) { };
 

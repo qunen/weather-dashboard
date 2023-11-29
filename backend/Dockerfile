@@ -1,4 +1,4 @@
-FROM node:18-alpine
+FROM node:18
 WORKDIR /usr/src/api
 
 # Copy and install packages
@@ -7,5 +7,5 @@ RUN npm ci
 
 # Copy and run server
 COPY . .
-RUN npm run etl
-CMD ["npm", "start"]
+# RUN bash dockerDbInit.sh
+CMD ["bash", "dockerDbInit.sh"]

@@ -7,7 +7,7 @@ import { TemperatureResponse } from '../interfaces/temperature';
   providedIn: 'root'
 })
 export class TemperatureService {
-  private apiUrl: string = `http://localhost:3000/api/v1/temperature`;
+  private apiUrl: string = `http://localhost:8080/api/v1/temperature`;
 
   constructor(private http: HttpClient) { }
 

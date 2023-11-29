@@ -7,7 +7,7 @@ import { RelativeHumidityResponse } from '../interfaces/relative-humidity';
   providedIn: 'root'
 })
 export class RelativeHumidityService {
-  private apiUrl: string = `http://localhost:3000/api/v1/relativeHumidity`;
+  private apiUrl: string = `http://localhost:8080/api/v1/relativeHumidity`;
 
   constructor(private http: HttpClient) { };
 

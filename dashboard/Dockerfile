@@ -7,4 +7,5 @@ RUN npm ci
 
 # Copy and run app
 COPY . .
-CMD ["ng", "serve"]
+EXPOSE 4200
+CMD ["npm", "run", "docker"]

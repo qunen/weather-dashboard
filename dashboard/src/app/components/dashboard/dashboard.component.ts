@@ -135,9 +135,9 @@ export class DashboardComponent implements OnInit {
     this.temperatureProps.lineChartData.datasets[1] = { ...this.temperatureProps.lineChartData.datasets[1], data: data.min };
   }
   filterCharts(dateObject: { startDate: string; endDate: string }) {
-    this.directRadiationService.getDirectRadiationData(`${dateObject.startDate}T08:00Z`, `${dateObject.endDate}T08:00Z`).subscribe((res) => this.updateDirectRadiationData(res.data));
-    this.relativeHumidityService.getRelativeHumidityData(`${dateObject.startDate}T08:00Z`, `${dateObject.endDate}T08:00Z`).subscribe((res) => this.updateRelativeHumidityData(res.data));
-    this.temperatureService.getTemperatureData(`${dateObject.startDate}T08:00Z`, `${dateObject.endDate}T08:00Z`).subscribe((res) => this.updateTemperatureData(res.data));
+    this.directRadiationService.getDirectRadiationData(`${dateObject.startDate}T00:00Z`, `${dateObject.endDate}T00:00Z`).subscribe((res) => this.updateDirectRadiationData(res.data));
+    this.relativeHumidityService.getRelativeHumidityData(`${dateObject.startDate}T00:00Z`, `${dateObject.endDate}T00:00Z`).subscribe((res) => this.updateRelativeHumidityData(res.data));
+    this.temperatureService.getTemperatureData(`${dateObject.startDate}T00:00Z`, `${dateObject.endDate}T00:00Z`).subscribe((res) => this.updateTemperatureData(res.data));
   }
 
   // Direct Radiation Chart

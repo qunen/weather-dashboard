@@ -7,7 +7,7 @@ import { AxisUnitsResponse } from '../interfaces/axis-units';
   providedIn: 'root'
 })
 export class AxisUnitsService {
-  private apiUrl: string = `http://localhost:3000/api/v1/axisUnits`;
+  private apiUrl: string = `http://localhost:8080/api/v1/axisUnits`;
 
   constructor(private http: HttpClient) { };
 
