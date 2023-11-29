@@ -3,7 +3,7 @@ This is a weather dashboard app which visualizes data from the following API:
 ```
 GET https://api.open-meteo.com/v1/forecast?latitude=1.29&longitude=103.85&hourly=relativehumidity_2m,direct_radiation&daily=temperature_2m_max,temperature_2m_min&timezone=Asia%2FSingapore&start_date=2023-10-01&end_date=2023-10-10
 ```
-The API retrieves the following weather data from 01-Oct-2023 to 10-10-2023:
+The API retrieves the following weather data from 01-Oct-2023 to 10-Oct-2023:
 - hourly relative humidity
 - hourly direct radiation
 - daily minimum and maximum temperature
