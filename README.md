@@ -1,4 +1,4 @@
-# WeatherDashboard
+# Weather Dashboard
 This is a weather dashboard app which visualizes data from the following API:
 ```
 GET https://api.open-meteo.com/v1/forecast?latitude=1.29&longitude=103.85&hourly=relativehumidity_2m,direct_radiation&daily=temperature_2m_max,temperature_2m_min&timezone=Asia%2FSingapore&start_date=2023-10-01&end_date=2023-10-10
@@ -52,4 +52,11 @@ cd ../dashboard
 npm ci
 ng serve
 ```
-You should now be able to access the dashboard at `http://localhost:4200/`
+You should now be able to access the dashboard at `http://localhost:4200/`.
+
+Alternatively, you can run this with `docker compose`.
+```
+docker compose build
+docker compose up
+```
+Once the dashboard container is done building, the dashboard can be accessed on `http://localhost:4200/`.

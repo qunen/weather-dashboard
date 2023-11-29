@@ -11,6 +11,14 @@ services:
       MARIADB_ROOT_PASSWORD: root_password
       MARIADB_USER: user
       MARIADB_PASSWORD: password
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--innodb_initialized", "--connect"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+    networks:
+      - backend-service
     volumes:
       - ./backend/docker/db:/docker-entrypoint-initdb.d
 
@@ -20,13 +28,17 @@ services:
       - 8080:8080
     restart: always
     environment:
-      MARIADB_HOST: "mariabd"
+      MARIADB_HOST: mariadb
       MARIADB_PORT: 3306
-      MARIADB_USER: "user"
-      MARIADB_PASSWORD: "password"
-      MARIADB_DATABASE: "weatherData"
+      MARIADB_USER: user
+      MARIADB_PASSWORD: password
+      MARIADB_DATABASE: weatherData
+      PORT: 8080
+    networks:
+      - backend-service
     depends_on:
-      - mariadb
+      mariadb:
+        condition: service_healthy
 
   dashboard:
     build: ./dashboard
@@ -35,5 +47,7 @@ services:
     restart: always
     depends_on:
       - backend
-    volumes:
-      - dashboard:/data/dashboard
+
+networks:
+  backend-service:
+    driver: bridge
